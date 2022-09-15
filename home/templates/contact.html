@@ -1,0 +1,112 @@
+{% extends 'basic.html' %} {% block title%} Contact Us{% endblock %} 
+{% block body %}
+
+<div class="card text-bg-dark">
+  <img
+    src="https://media.istockphoto.com/photos/farmland-countryside-with-cows-on-lemnos-island-in-greece-picture-id1407672016?b=1&k=20&m=1407672016&s=170667a&w=0&h=7r7aQMbqGdPfPJM5Eqc1uhjJQeDnT3-tOsWTrTZ7P_s="
+    class="card-img"
+    alt="..."
+  />
+  <div class="card-img-overlay">
+    <h5 class="card-title">Hire Us For A beautifull memmory!</h5>
+    <p class="card-text">
+      There are many types of photography that you can pursue - wedding
+      photography, portrait photography, commercial photography, sports
+      photography, travel photography, and many others.
+    </p>
+    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  </div>
+</div>
+
+<div class="container my-3 ">
+  <h3>Contact Us</h3>
+  <form action="/contact/" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Enter Your Name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Enter Your Email"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="name">Phone</label>
+      <input
+        type="tel"
+        class="form-control"
+        id="phone"
+        name="phone"
+        placeholder="Enter Your Phone Number"
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Venue</label>
+      <input
+        type="Venue"
+        class="form-control"
+        id="ven"
+        name="ven"
+        placeholder="Enter desire venue! Example:wedding,fashion etc.."
+      />
+   
+    <div class="form-group">
+      <label for="name">city</label>
+      <input
+        type="city"
+        class="form-control"
+        id="city"
+        name="city"
+        placeholder="Enter Your city"
+      />
+      <div class="form-group">
+        <label for="name">State</label>
+        <input
+          type="state"
+          class="form-control"
+          id="state"
+          name="state"
+          placeholder="Enter Your State"
+        />
+        <div class="form-group">
+          <label for="name">Pincode</label>
+          <input
+            type="zip"
+            class="form-control"
+            id="zip"
+            name="zip"
+            placeholder="Enter Your zip"
+          />
+
+    <div class="form-group">
+      <label for="desc">Special Requirements.....!</label>
+      <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+{% endblock %} {% block js%}
+<script>
+  {% if thank %}
+  alert('Thanks for contacting us. We will contact you very soon!');
+  document.location = "/contact/";
+
+
+  {% endif %}
+</script>
+
+{% endblock %}
